@@ -13,4 +13,6 @@ int main() {
     FrameX::out("Bullet Type 1", FRAMEX_TEXT_BULLET_1);
     FrameX::out("Bullet Type 2", FRAMEX_TEXT_BULLET_2);
     FrameX::out("Is there a typo?", 0x161);
+    FrameX::textInput("I dont care what you'll write here");
+    FrameX::yesNoInput("Is this question useless?");
 }

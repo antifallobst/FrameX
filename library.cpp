@@ -62,8 +62,25 @@ namespace FrameX {
         }
     }
 
-    std::string in(std::string, uint8_t Mode){
+    std::string textInput(std::string str){
         std::cout << std::endl;
 
+        std::cout << ANSI_COLOR_MAGENTA << "<-- " << str << " -->: ";
+        std::string ret;
+        std::cin >> ret;
+        return ret;
+    }
+
+    bool yesNoInput(std::string str){
+        char inp;
+        system("stty raw");
+        while (true) {
+            std::cout << std::endl;
+            std::cout << ANSI_COLOR_MAGENTA << "<-- " << str << " -->" << ANSI_COLOR_BLUE << "[Y/N]" << ANSI_COLOR_MAGENTA << ": " << ANSI_COLOR_RESET;
+            std::cin >> inp;
+            out((std::string) &inp, FRAMEX_TEXT_DEBUG);
+            if (inp == 'Y' || inp == 'y') { return true; }
+            if (inp == 'N' || inp == 'n') { return false; }
+        }
     }
 }
