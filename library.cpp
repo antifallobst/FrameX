@@ -83,4 +83,13 @@ namespace FrameX {
             if (inp == 'N' || inp == 'n') { return false; }
         }
     }
+
+    void separator(int length) {
+        std::cout << std::endl << ANSI_COLOR_BLUE << '!';
+        if (length < 3) length = 3; // Define a minimal length of one '='
+        for (int i = 0; i < length-2; i++) {
+            std::cout << '=';
+        }
+        std::cout << '!' << ANSI_COLOR_RESET;
+    }
 }

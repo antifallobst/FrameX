@@ -60,6 +60,7 @@ namespace FrameX {
     void out(std::string str, uint8_t Mode = FRAMEX_TEXT_STD);
     std::string textInput(std::string str);
     bool yesNoInput(std::string str);
+    void separator(int length);
 }
 
 #endif //FRAMEX_LIBRARY_H
