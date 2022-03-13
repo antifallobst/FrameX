@@ -5,7 +5,7 @@
 namespace FrameX {
 
     void out(std::string str, uint8_t Mode){
-        std::cout << std::endl;
+        std::cout << '\n';
 
         switch (Mode){
             case FRAMEX_TEXT_STD:
@@ -63,7 +63,7 @@ namespace FrameX {
     }
 
     std::string textInput(std::string str){
-        std::cout << std::endl;
+        std::cout << '\n';
 
         std::cout << ANSI_COLOR_MAGENTA << "<-- " << str << " -->: ";
         std::string ret;
@@ -75,7 +75,7 @@ namespace FrameX {
         char inp;
         system("stty raw");
         while (true) {
-            std::cout << std::endl;
+            std::cout << '\n';
             std::cout << ANSI_COLOR_MAGENTA << "<-- " << str << " -->" << ANSI_COLOR_BLUE << "[Y/N]" << ANSI_COLOR_MAGENTA << ": " << ANSI_COLOR_RESET;
             std::cin >> inp;
             out((std::string) &inp, FRAMEX_TEXT_DEBUG);
@@ -85,7 +85,7 @@ namespace FrameX {
     }
 
     void separator(int length) {
-        std::cout << std::endl << ANSI_COLOR_BLUE << '!';
+        std::cout << '\n' << ANSI_COLOR_BLUE << '!';
         if (length < 3) length = 3; // Define a minimal length of one '='
         for (int i = 0; i < length-2; i++) {
             std::cout << '=';
